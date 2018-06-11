@@ -8,27 +8,28 @@ class Surat extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Wisata_model');
+        $this->load->model('Surat_model');
     }
     
     public function index()
     {
         // $this->Dashboard();
         
-        $this->load->view('surat/Login');
+        $this->load->view('surat/login');
+        
         
     }
     
     public function Dashboard()
     {
-        $data['data'] = $this->Wisata_model->Getdata_wisata();   
-		$this->load->view('Wisata/Dashboard', $data);
+        // $data['data'] = $this->Wisata_model->Getdata_wisata();   
+		// $this->load->view('Wisata/Dashboard', $data);
     }
 
     public function Maintenance()
     {
-        $data['data'] = $this->Wisata_model->Getdata_wisata();
-		$this->load->view('Wisata/Maintenance', $data);
+        // $data['data'] = $this->Wisata_model->Getdata_wisata();
+		// $this->load->view('Wisata/Maintenance', $data);
     }
 
     public function Aboutus()

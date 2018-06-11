@@ -1,5 +1,4 @@
-<?php $this->load->view('Surat/HeaderKonten'); ?>
-
+<?php $this->load->view('Surat/Header'); ?>
   <!-- Content -->
   <div class="container-fluid">
         <div class="row">
@@ -8,17 +7,17 @@
                 <div class="card">
                     <div class="card-body center text-center">
                         <i class="far fa-user-circle fa-10x" ></i>
-                        <h4 class="card-title">Selamat Datang <?= $_SESSION['username'] ?></h4>
+                        <h4 class="card-title">Selamat Datang </h4>
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
-                            <a href="./data_surat.php">
+                            <a href="#">
                                <i class="fas fa-envelope"></i>
                                 Edit Profil
                             </a>
                         </li>
                         <li class="list-group-item">
-                            <a href="./data_user.php">
+                            <a href="#">
                                 <i class="fas fa-users"></i>
                                 Log Out
                             </a>
@@ -35,17 +34,12 @@
                         </div>
                         <div class="card-body">
                             <div class="list-group">
-                                <?php 
-                                    $query = "SELECT * FROM surat_masuk LIMIT 5";
-                                    $sql = $connect->query($query);
-                                    while($data = $sql->fetch_array()){ 
-                                ?>
                                     <div class="list-group-item list-group-item-action flex-column align-items-start" data-toggle="modal" data-target="#modelId<?= $data['id_surat'] ?>">
                                         <div class="d-flex w-100 justify-content-between">
-                                            <h5 class="mb-1"><?= $data['perihal'] ?></h5>
-                                            <small><?= $data['waktu'] ?></small>
+                                            <h5 class="mb-1"></h5>
+                                            <small></small>
                                         </div>
-                                        <p class="mb-1"><?= $data['keterangan'] ?></p>
+                                        <p class="mb-1"</p>
                                     </div>
                             </div>
                             <br>
@@ -59,5 +53,3 @@
         </div>
   </div>
 
-
-<?php $this->load->view('Surat/Footer'); ?>

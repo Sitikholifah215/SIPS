@@ -1,0 +1,17 @@
+.loginBackground{
+    background:url(../../assets/gambar/loginPage.png) no-repeat;
+    background-size: cover;
+}
+
+.content{
+    margin-top: 10rem;
+}
+
+.darken {
+    box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.5);
+    border-color: rgba(0, 0, 0, 1);
+}
+
+.white{
+    color: white;
+}
