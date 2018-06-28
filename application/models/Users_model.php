@@ -5,17 +5,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Users_model extends CI_Model {
 
     public function Get(){
-       $query = $this->db->get('users');
+       $query = $this->db->get('user');
        return $query->result_all();
     }
+    
+    public function login($username,$password)
+	 	{
+	 		$this->db->select('id,username,password,level');
+	 		$this->db->from('user');
+	 		$this->db->where('username',$username);
+	 		$this->db->where('password', MD5($password));
+	 		$query = $this->db->get();
+	 		if($query->num_rows()==1){
+	 			return $query->result();
+	 		}else{
+	 			return false;
+	 		}
+	 		
+	 	}
 
-    public function Create(){
+    public function GetLogin($data){
+        
+    }
+
+    public function Create()
+    {
         $object = array(
-            'username'  =>$this->input->post(),
-            'password'  =>$this->input->post(),
-            'level'     =>$this->input->post()
-        );
-        $query = $this->db->insert('users', $object);
+            'nama' => $this->input->post('nama'),
+            'nip' => $this->input->post('nip'),
+            'tanggal' => $this->input->post('tanggal'),
+            'alamat' => $this->input->post('alamat'),
+            'foto'=> $this->upload->data('file_name'),
+    );
+           $this->db->insert('pegawai',$object);
     }
 
     public function Update($id){

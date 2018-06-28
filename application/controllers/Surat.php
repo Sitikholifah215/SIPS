@@ -13,17 +13,16 @@ class Surat extends CI_Controller {
     
     public function index()
     {
+        $this->load->view('admin/data_organisasi') ;
+       // $this->create();
         // $this->Dashboard();
-        
-        $this->load->view('surat/login');
-        
-        
+        // $this->load->view('surat/dashboard');        
     }
+
     
     public function Dashboard()
     {
-        // $data['data'] = $this->Wisata_model->Getdata_wisata();   
-		// $this->load->view('Wisata/Dashboard', $data);
+        $this->load->view('surat/dashboard');
     }
 
     public function Maintenance()
@@ -39,41 +38,40 @@ class Surat extends CI_Controller {
 
     public function Create()
     {
-        $this->form_validation->set_rules('nama','Nama','trim|required');
-        $this->form_validation->set_rules('lokasi','Lokasi','trim|required');
-        $this->form_validation->set_rules('tarif','Tarif','trim|required');
-        $this->form_validation->set_rules('tanggal','Tanggal','trim|required');
+        // $this->form_validation->set_rules('nama','Nama','trim|required');
+        // $this->form_validation->set_rules('lokasi','Lokasi','trim|required');
+        // $this->form_validation->set_rules('tarif','Tarif','trim|required');
+        // $this->form_validation->set_rules('tanggal','Tanggal','trim|required');
         
         // load model
-        $this->load->model('Wisata_model');
+        // // $this->load->model('Wisata_model');
 
-        if($this->form_validation->run()==FALSE)
-        {
-            $this->load->view('Wisata/Input');
-        }
-        else
-        {
-            $config['upload_path']      = './assets/gambar_wisata/';
-            $config['allowed_types']    = 'gif|jpg|png';
-            $config['max_size']         = '1000000000';
-            $config['max_width']        = '10240';
-            $config['max_height']       = '6780';
+        // if($this->form_validation->run()==FALSE)
+        // {
+            $this->load->view('admin/tambah_user');
+        // }
+        // else
+        // {
+        //     $config['upload_path']      = './assets/gambar_wisata/';
+        //     $config['allowed_types']    = 'gif|jpg|png';
+        //     $config['max_size']         = '1000000000';
+        //     $config['max_width']        = '10240';
+        //     $config['max_height']       = '6780';
 
-            $this->load->library('upload', $config) ;
+        //     $this->load->library('upload', $config) ;
             
-            if(! $this->upload->do_upload('gambar'))
-            {
-                $error = array('error' => $this->upload->display_errors());
-                $this->load->view('Wisata/Input', $error);
-               // print_r($error);
-            }
-            else
-            {
-                $this->Wisata_model->insertWisata();
-                $this->load->view('Wisata/Input_sukses');
-            }
+        //     if(! $this->upload->do_upload('gambar'))
+        //     {
+        //         $error = array('error' => $this->upload->display_errors());
+        //         $this->load->view('Wisata/Input', $error);
+        //        // print_r($error);
+        //     }
+        //     else
+        //     {
+        //         $this->Wisata_model->insertWisata();
+        //         $this->load->view('Wisata/Input_sukses');
+        //     }
         }    
-    }
 
     public function Update($id)
     {

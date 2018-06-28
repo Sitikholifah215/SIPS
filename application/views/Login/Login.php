@@ -12,7 +12,7 @@
                     </h1>       
                 </div>
                 <div class="col-md-6 justify-content-md-center">
-                    <form action="" method="post">
+                    <form action="<?php echo base_url('index.php/Users/Login') ?>" method="post">
                         <div class="form-group">
                         <label class="white" for="username">Username</label>
                         <input type="text" name="username" id="username" class="form-control" placeholder="username" aria-describedby="helpId">
