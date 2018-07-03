@@ -2,6 +2,10 @@
     background:url(../../assets/gambar/loginPage.png) no-repeat;
     background-size: cover;
 }
+.loginBackgroundAdmin{
+    background:url(../../assets/gambar/admin.jpg) no-repeat;
+    background-size: cover;
+}
 
 .content{
     margin-top: 10rem;
