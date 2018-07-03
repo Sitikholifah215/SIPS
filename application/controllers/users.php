@@ -14,7 +14,10 @@ class Users extends CI_Controller {
 
     public function index()
     {
-        $this->load->view('admin/');
+        $this->load->view('login/login');
+       // $this->create();
+        // $this->Dashboard();
+        // $this->load->view('surat/dashboard');      
     }
 
     public function Login()

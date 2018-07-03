@@ -21,7 +21,7 @@
     <!-- menu navbar -->
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #001970;">
         <a class="navbar-brand" href="<?= site_url('Surat')?>">
-            <img src="./assets/gambar/icons8-magazine-64.png" height="45px" width="50px" alt="" srcset=""> 
+            <img src="<?= base_url()?>./assets/gambar/icons8-magazine-64.png" height="45px" width="50px" alt="" srcset=""> 
             <!-- SISTEM INFORMASI PENGARSIPAN SURAT -->
         </a>
         <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"

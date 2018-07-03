@@ -14,7 +14,7 @@
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
-                            <a href="#">
+                            <a href="<?= site_url('Surat/Dashboard')?>">
                             <i class="fas fa-user"></i>
                                 Edit Profil
                             </a>

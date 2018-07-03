@@ -29,3 +29,6 @@
 .navbar-light .navbar-brand {
     color: rgba(255, 255, 255, 0.9);
 }
+.card-header{
+    color: white;
+}
