@@ -21,7 +21,7 @@
                             <label class="white" for="password">Password</label>
                             <input type="password" name="password" id="password" class="form-control" placeholder="password" aria-describedby="helpId">
                         </div>
-                        <button type="submit" name="btn" id="" class="btn btn-success btn-lg btn-block">Login</button>
+                        <button type="submit" name="btn" id="" class="btn btn-primary btn-lg btn-block">Login</button>
                     </form>
                 </div>
             </div>

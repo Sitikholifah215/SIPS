@@ -9,12 +9,16 @@
     <!-- Bootstrap CSS --> 
     <link rel="stylesheet" href="<?= base_url('assets/css/datatables.min.css')?>"/>
     
+    <!-- Bootstrap CSS --> 
+    <link rel="stylesheet" href="<?= base_url('assets/css/datatables.min.css')?>"/>
+    <!-- <link rel="stylesheet" href="<?php base_url('assets/css/bootstrap.min.css')?>"/> -->
 
-    <link rel="stylesheet" href="<?= base_url()?>assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
     
-    <link rel="stylesheet" href="<?= base_url()?>assets/font-awesome-5/css/fontawesome-all.css">
+    <link rel="stylesheet" href="<?= base_url('assets/font-awesome-5/css/fontawesome-all.css') ?>">
 
     <link rel="stylesheet" href="<?= base_url()?>assets/css/style.css">
+
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
