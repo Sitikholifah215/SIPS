@@ -29,36 +29,44 @@ class Users extends CI_Controller {
 		$this->form_validation->set_rules('password','Password','trim|required|callback_cekDb');
 		 
  		if ($this->form_validation->run() == FALSE) {
- 			$this->load->view('login/login');
+ 			$this->load->view('Login/Login_Users');
  		} else {
- 			redirect('dashboard','refresh');
+ 			redirect(base_url('Users/Dashboard'),'refresh');
  		}
 
-    }
+	}
+
+	public function Dashboard()
+	{
+		$this->load->view('Users/Dashboard_user');
+	}
+
     public function cekDb($password)
  	{
 		$this->load->model('users_model');
 
 		$username = $this->input->post('username'); 
-		// $result = $this->users_model->login($username,$password);
+		$result = $this->users_model->login($username,$password);
 
-		print_r($password);
+		print_r($result);
 		 
- 		// if($result){
- 		// 	$sess_array = array();
- 		// 	foreach ($result as $row) {
- 		// 		$sess_array = array(
- 		// 			'id'=>$row->id,
- 		// 			'username'=> $row->username,
- 		// 			'level' => $row->level
- 		// 		);
- 		// 		$this->session->set_userdata('logged_in',$sess_array);
- 		// 	}
- 		// 	return true;
- 		// }else{
- 		// 	$this->form_validation->set_message('cekDb',"Login Gagal Username dan Password Tidak Valid");
- 		// 	return false;
- 		// }
+ 		if($result){
+ 			$sess_array = array();
+ 			foreach ($result as $row => $res) {
+				 echo $res->nim;
+ 				$sess_array = array(
+ 					'id_user'=>$res->id_user,
+					 'nim'=> $res->nim,
+					 'nama'=> $res->nama_sekretaris,
+ 					'level' => $res->level
+ 				);
+ 				$this->session->set_userdata('logged_in',$sess_array);
+ 			}
+ 			return true;
+ 		}else{
+ 			$this->form_validation->set_message('cekDb',"Login Gagal Username dan Password Tidak Valid");
+ 			return false;
+ 		}
  	}
 
 }
